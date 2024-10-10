@@ -7,8 +7,9 @@ WORKDIR /app
 ADD . /app
 
 # Install curl and any required Python packages
-RUN apk add --no-cache curl && \
-    #pip install --no-cache-dir -r requirements.txt
+RUN apk add --no-cache curl 
+
+#RUN pip install --no-cache-dir -r requirements.txt
 
 # Set the timezone to Asia/Seoul
 RUN ln -snf /usr/share/zoneinfo/Asia/Seoul /etc/localtime && echo Asia/Seoul > /etc/timezone
