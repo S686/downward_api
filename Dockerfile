@@ -1,4 +1,4 @@
-FROM python:3.8-slim
+FROM python:3.8-alpine
 
 # set the working directory in the container to /app
 WORKDIR /app
@@ -7,13 +7,13 @@ WORKDIR /app
 ADD . /app
 
 # Install curl and any required Python packages
-RUN apt-get update && apt-get install -y curl && \
-    pip install -r requirements.txt && \
-    apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache curl && \
+    pip install --no-cache-dir -r requirements.txt
 
+# Set the timezone to Asia/Seoul
 RUN ln -snf /usr/share/zoneinfo/Asia/Seoul /etc/localtime && echo Asia/Seoul > /etc/timezone
 
-# unblock port 80 for the Flask app to run on
+# unblock port 40003 for the Flask app to run on
 EXPOSE 40003
 
 # execute the Flask app
