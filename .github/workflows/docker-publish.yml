@@ -16,7 +16,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: s686/downward:downward-test
+  IMAGE_NAME: s686/downward
 
 jobs:
   build:
