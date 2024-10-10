@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
   - name: main
-    image: ghcr.io/s686/downward_api:v2
+    image: ghcr.io/s686/downward:downward-test
     # command: ["sleep", "99999"]
     resources:
       requests:
