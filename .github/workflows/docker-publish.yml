@@ -16,7 +16,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: your_dockerhub_username/downward_api
+  IMAGE_NAME: s686/downward:downward-test
 
 jobs:
   build:
